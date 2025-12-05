@@ -1,0 +1,162 @@
+    body {
+      margin: 0;
+      height: 100vh; 
+      background-image: url("fondo.png");
+      background-size: cover; ; 
+      background-repeat: no-repeat;
+      background-position: center; 
+      background-attachment: fixed;
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        margin-left: 25px;
+    }
+     .link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 15px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+
+    /* CORRECCIÓN: distribución real y proporcional */
+    display: flex;
+    gap: 40px; 
+    align-items: center;
+
+    /* Ajuste para que no se desborde */
+    transform: translateX(-20px);
+}
+
+.link a {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: "Helvetica", sans-serif;
+    color: white;
+    gap: 50px;
+
+    /* Se elimina el gap interno innecesario */
+}
+
+
+    .iconos {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+    }
+
+    .iconos img {
+        width: 40px;
+        height: auto;
+        cursor: pointer;    
+
+    }
+    .boton {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .boton a button {
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(2px);
+        border: 1.5px solid white;
+        padding: 14px 34px;
+        font-size: 18px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: white;
+        cursor: pointer;
+    }
+
+
+    .boton a button {
+        background: rgba(0,0,0,0.8); 
+        backdrop-filter: blur(2px);
+        border: 1.5px solid white;
+        padding: 14px 34px;
+        font-weight: 300;
+    }
+
+/* === ANIMACIÓN DE ENTRADA DEL HEADER === */
+header {
+    animation: entrada-fuerte 1.2s ease-out forwards;
+    opacity: 0; 
+}
+
+@keyframes entrada-fuerte {
+    0% {
+        transform: translateY(-100px) scale(0.8);
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(10px) scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* === LINKS CON EFECTO DE VIBRACIÓN (intenso) === */
+.link a {
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.link a:hover {
+    animation: vibrar 0.2s linear infinite;
+    color: black; 
+}
+
+@keyframes vibrar {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+
+/* === ICONOS CON ROTACIÓN SUAVE === */
+.iconos img {
+    transition: transform 0.5s ease;
+}
+
+.iconos img:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+
+/* === BOTÓN CON PULSO FUERTE === */
+.boton button {
+    animation: pulso 1.5s infinite;
+    transition: 0.3s;
+}
+
+@keyframes pulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
+
+.boton button:hover {
+    transform: scale(1.2);
+}
+

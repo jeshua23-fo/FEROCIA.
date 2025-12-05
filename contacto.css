@@ -1,0 +1,126 @@
+/* ----------------------------- */
+/*        ESTILO GENERAL         */
+/* ----------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Didot", serif;
+    text-align: center;
+
+    background-image: url("imagenfondo.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 50px;
+    animation: fadePage 1s ease;
+}
+
+@keyframes fadePage {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ----------------------------- */
+/*   CONTENEDOR DE LOS LOGOS     */
+/* ----------------------------- */
+
+.logo-instagram,
+.logo-tiktok,
+.logo-pinterest {
+    width: 200px;
+    height: auto;
+    margin: 0 25px;
+    border-radius: 20px;
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+
+    transform: scale(0.92);
+    transition: 0.35s ease;
+}
+
+/* Hover elegante */
+.logo-instagram:hover,
+.logo-tiktok:hover,
+.logo-pinterest:hover {
+    transform: scale(1) translateY(-6px);
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.45);
+}
+
+
+/* ----------------------------- */
+/*    CAJAS DE CONTACTO          */
+/* ----------------------------- */
+
+.contacto-numero,
+.numero-telf {
+    margin-top: 60px;
+    width: 350px;
+
+    background: rgba(255, 255, 255, 0.12);
+    padding: 25px;
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 0 25px rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    animation: riseBox 0.8s ease forwards;
+}
+
+@keyframes riseBox {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Títulos */
+.contacto-numero h2,
+.numero-telf h2 {
+    font-size: 30px;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 2px;
+
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+/* Número */
+.contacto-numero p,
+.numero-telf p {
+    font-size: 22px;
+    color: #f5f5f5;
+    margin-bottom: 15px;
+}
+
+
+/* ----------------------------- */
+/*        ICONOS DE CONTACTO     */
+/* ----------------------------- */
+
+.logo-wspp,
+.logo-llamada {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+
+    margin-top: 10px;
+
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}

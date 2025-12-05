@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEROCIA</title>
+    <link rel="stylesheet" href="lamarca.css">
+</head>
+<body>
+
+    <div class="descripcion-marca fade-strong">
+        <div class="columna-texto">
+            <h2>¿QUIÉNES SOMOS?</h2>
+            <p>Somos una marca que surge de una necesidad del usuario masculino, el cual es poder almacenar sus pertenencias, en un “mini bolso” en lugar de llevar todo en los bolsillos.</p> 
+            <p>Nuestros productos están diseñados para el hombre moderno, que busca funcionalidad y estilo en un solo accesorio. Cada bolso es elaborado con materiales de alta calidad y atención al detalle.</p>
+        </div>
+
+        <div class="columna-imagenes fade-strong">
+            <img src="imagenchico1.png" class="img-3d img-izq" alt="Modelo 1 con mini bolso Ferocia">
+            <img src="imagenchico2.png" class="img-3d img-der" alt="Modelo 2 con mini bolso Ferocia">
+        </div>
+    </div>
+
+    <div class="mision-vision">
+        <h2>MISIÓN</h2>
+        <p>Nuestra misión es ofrecer mini bolsos elegantes y funcionales pensados para el hombre moderno. Queremos que cada cliente pueda llevar sus pertenencias con estilo.</p>
+
+        <h2>VISIÓN</h2>
+        <p>Para el año 2030, seremos la marca líder en accesorios masculinos en toda Latinoamérica. Buscamos ser reconocidos por la calidad y el diseño innovador.</p>
+    </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll(".fade-strong");
+
+    const observador = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elementos.forEach(el => observador.observe(el));
+});
+document.querySelectorAll(".img-3d").forEach(img => {
+    img.addEventListener("mousemove", e => {
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateY = ((x / rect.width) - 0.5) * 25; 
+        const rotateX = ((y / rect.height) - 0.5) * -25; 
+
+        img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    img.addEventListener("mouseleave", () => {
+        img.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+    });
+});
+</script>
+
+
+
+
+</body>
+</html>

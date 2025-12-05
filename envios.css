@@ -1,0 +1,161 @@
+/* Estilo general */
+body {
+    font-family: "Didot", "Times New Roman", serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    background-image: url("imagenfondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+/* Contenedor general del formulario */
+.contenedor-envio {
+    width: 90%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 35px 35px 45px;
+    border-radius: 18px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    margin-top: 20px;
+}
+
+/* Título */
+.titulo-envio {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Etiquetas */
+.form-envio label {
+    font-size: 15px;
+    font-weight: 400;
+    color: #efefef;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Inputs y select */
+.form-envio input,
+.form-envio textarea,
+.form-envio select {
+    width: 100%;
+    padding: 13px;
+    font-size: 15px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.22);
+    color: black;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.12) inset;
+    margin-bottom: 18px;
+}
+
+/* Placeholder blancos */
+.form-envio input::placeholder,
+.form-envio textarea::placeholder,
+.form-envio select {
+    color: black;
+}
+
+/* Botón */
+.btn-envio {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #000;
+    font-size: 16px;
+    font-family: "Didot", serif;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    width: 100%;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-envio:hover {
+    background-color: #e6e6e6;
+}
+
+/* ----- ANIMACIÓN: Movimiento suave del fondo ----- */
+@keyframes bgMove {
+    0% { background-position: center; }
+    50% { background-position: center 25px; }
+    100% { background-position: center; }
+}
+
+body {
+    animation: bgMove 10s ease-in-out infinite;
+}
+
+/* ----- ANIMACIÓN: Aparición del contenedor ----- */
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(40px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.contenedor-envio {
+    animation: fadeSlideUp 1.2s ease forwards;
+}
+
+/* ----- ANIMACIÓN: Glow suave en el título ----- */
+@keyframes titleGlow {
+    0% { text-shadow: 0 0 6px rgba(255,255,255,0.4); }
+    100% { text-shadow: 0 0 14px rgba(255,255,255,0.9); }
+}
+
+.titulo-envio {
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+/* ----- ANIMACIÓN: Inputs entrando uno por uno ----- */
+@keyframes inputFade {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.form-envio input,
+.form-envio textarea,
+.form-envio select,
+.btn-envio {
+    animation: inputFade 0.8s ease forwards;
+}
+
+/* Delay progresivo a cada input */
+.form-envio input:nth-child(1) { animation-delay: .1s; }
+.form-envio input:nth-child(3) { animation-delay: .2s; }
+.form-envio input:nth-child(5) { animation-delay: .3s; }
+.form-envio input:nth-child(7) { animation-delay: .4s; }
+.form-envio input:nth-child(9) { animation-delay: .5s; }
+.form-envio select          { animation-delay: .6s; }
+.form-envio textarea        { animation-delay: .7s; }
+.btn-envio                  { animation-delay: .9s; }
+
+/* ----- ANIMACIÓN: Glow cuando el input recibe foco ----- */
+@keyframes glowFocus {
+    0% { box-shadow: 0 0 0px rgba(255,255,255,0.4); }
+    100% { box-shadow: 0 0 15px rgba(255,255,255,0.9); }
+}
+
+.form-envio input:focus,
+.form-envio textarea:focus,
+.form-envio select:focus {
+    animation: glowFocus 0.25s forwards;
+}

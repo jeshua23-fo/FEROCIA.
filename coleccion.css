@@ -1,0 +1,176 @@
+/* RESET GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Didot", serif;
+    text-align: center;
+}
+
+/* ------------------------- */
+/*        BANNER NUEVO       */
+/* ------------------------- */
+
+.banner-coleccion {
+    width: 100%;
+    height: 450px;          /* AUMENTAMOS LA ALTURA DEL BANNER */
+    object-fit: cover;      /* Fondo bien rellenado */
+    display: block;
+    position: relative;
+}
+
+
+
+
+/* ------------------------- */
+/*    TEXTO / TÍTULO         */
+/* ------------------------- */
+
+.titulo-coleccion h2 {
+    font-size: 35px;
+    font-weight: 300;
+    margin-top: 120px;   /* se baja para quedar debajo del bolso */
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+
+/* ------------------------- */
+/*     GRID DE PRODUCTOS     */
+/* ------------------------- */
+
+.grid-productos {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto 80px auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+/* Todas las imágenes igual */
+.grid-productos img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background-color: #e6e6e6;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+
+/* ------------------------- */
+/*         RESPONSIVE        */
+/* ------------------------- */
+
+@media (max-width: 900px) {
+    .banner-coleccion {
+        height: 260px;
+    }
+
+    .bolso-5_banner {
+        width: 220px;
+        top: 100px;
+    }
+
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .banner-coleccion {
+        height: 200px;
+    }
+
+    .bolso-5_banner {
+        width: 180px;
+        top: 80px;
+    }
+
+    .titulo-coleccion h2 {
+        font-size: 24px;
+        margin-top: 100px;
+    }
+
+    .grid-productos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------------------------------- */
+/*     ANIMACIÓN: Movimiento del fondo del banner  */
+/* ---------------------------------- */
+@keyframes bannerFloat {
+    0%   { transform: scale(1) translateY(0); filter: brightness(1); }
+    50%  { transform: scale(1.03) translateY(-8px); filter: brightness(1.08); }
+    100% { transform: scale(1) translateY(0); filter: brightness(1); }
+}
+
+.banner-coleccion {
+    animation: bannerFloat 8s ease-in-out infinite;
+}
+
+
+/* ---------------------------------- */
+/*       ANIMACIÓN: Fade + Slide del título */
+/* ---------------------------------- */
+@keyframes titleReveal {
+    0%   { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.titulo-coleccion h2 {
+    animation: titleReveal 1.2s ease forwards;
+}
+
+
+/* ---------------------------------- */
+/*     ANIMACIÓN: Glow suave en el título */
+/* ---------------------------------- */
+@keyframes titleGlow {
+    0%   { text-shadow: 0 0 4px rgba(0,0,0,0.15); }
+    100% { text-shadow: 0 0 12px rgba(0,0,0,0.25); }
+}
+
+.titulo-coleccion h2 {
+    animation: titleReveal 1.2s ease forwards, titleGlow 2.5s ease-in-out infinite alternate;
+}
+
+
+/* ---------------------------------- */
+/*     ANIMACIÓN: Productos entrando 1x1 */
+/* ---------------------------------- */
+@keyframes productFadeUp {
+    0%   { opacity: 0; transform: translateY(25px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.grid-productos img {
+    opacity: 0;
+    animation: productFadeUp 0.9s ease forwards;
+}
+
+/* Delay progresivo para efecto cascada */
+.grid-productos img:nth-child(1) { animation-delay: 0.1s; }
+.grid-productos img:nth-child(2) { animation-delay: 0.2s; }
+.grid-productos img:nth-child(3) { animation-delay: 0.3s; }
+.grid-productos img:nth-child(4) { animation-delay: 0.4s; }
+.grid-productos img:nth-child(5) { animation-delay: 0.5s; }
+.grid-productos img:nth-child(6) { animation-delay: 0.6s; }
+.grid-productos img:nth-child(7) { animation-delay: 0.7s; }
+.grid-productos img:nth-child(8) { animation-delay: 0.8s; }
+
+
+/* ---------------------------------- */
+/*  ANIMACIÓN: Hover de imágenes (luxury effect) */
+/* ---------------------------------- */
+@keyframes hoverGlow {
+    0%   { box-shadow: 0 0 0 rgba(0,0,0,0); transform: translateY(0); }
+    100% { box-shadow: 0 10px 25px rgba(0,0,0,0.25); transform: translateY(-6px); }
+}
+
+.grid-productos img:hover {
+    animation: hoverGlow 0.4s ease forwards;
+}

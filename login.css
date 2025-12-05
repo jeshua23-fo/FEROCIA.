@@ -1,0 +1,51 @@
+/* -------- LOGOS SUPERIORES -------- */
+.contenedor-logos {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Tamaños proporcionados, similares al ejemplo que enviaste */
+.logo-instagram {
+    width: 160px;
+    height: auto;
+}
+
+.logo-tiktok {
+    width: 220px;
+    height: auto;
+}
+
+.logo-pinterest {
+    width: 260px;
+    height: auto;
+    filter: blur(1px);   /* Para que parezca un aro brillante */
+}
+
+
+/* -------- TEXTO + ÍCONOS (wspp / teléfono) -------- */
+.texto-contacto {
+    margin-top: 110px;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.fila {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0;
+}
+
+.fila .texto {
+    margin-right: 18px;
+}
+
+/* Tamaño proporcional exacto a la tipografía */
+.icono {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}

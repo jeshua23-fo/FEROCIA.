@@ -1,0 +1,170 @@
+/* -------------------- */
+/*  FUENTES GENERALES   */
+/* -------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Didot", "Playfair Display", serif;
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+/* ----------------------------- */
+/*  SECCIÓN ¿QUIÉNES SOMOS?     */
+/* ----------------------------- */
+.descripcion-marca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 50px;
+    background: #fff;
+    color: #000;
+}
+
+.columna-texto {
+    width: 45%;
+    padding-right: 40px;
+}
+
+.columna-texto h2 {
+    font-size: 38px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.columna-texto p {
+    font-size: 25px;
+    line-height: 1.7;
+}
+
+/* -------------------- */
+/*  IMÁGENES DERECHA    */
+/* -------------------- */
+.columna-imagenes {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.columna-imagenes img {
+    width: 45%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* -------------------- */
+/*  MISIÓN Y VISIÓN     */
+/* -------------------- */
+.mision-vision {
+    background-image: url("imagenfondo.png");
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8);
+    padding: 110px 80px;
+    text-align: center;
+    color: #fff;
+}
+
+.mision-vision h2 {
+    font-size: 42px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.mision-vision p {
+    font-size: 30px;
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ========================================================= */
+/* ANIMACIONES FUERTES Y ELEGANTES PARA FEROCIA              */
+/* ========================================================= */
+
+/* Fade + Slide desde abajo */
+@keyframes strongFadeUp {
+    0% { opacity: 0; transform: translateY(80px) scale(0.95); }
+    60% { opacity: 1; transform: translateY(10px) scale(1.02); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Fade + Slide desde la derecha */
+@keyframes strongFadeRight {
+    0% { opacity: 0; transform: translateX(120px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Efecto zoom-in suave */
+@keyframes zoomIn {
+    0% { transform: scale(0.85); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Efecto brillo pulido */
+@keyframes luxuryGlow {
+    0% { text-shadow: 0 0 8px rgba(255,255,255,0.2); }
+    50% { text-shadow: 0 0 22px rgba(255,255,255,0.55); }
+    100% { text-shadow: 0 0 8px rgba(255,255,255,0.2); }
+}
+
+/* Parallax ligero en imágenes */
+@keyframes parallaxFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* Aparecer fuerte al hacer scroll */
+.fade-strong {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade-strong.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================================= */
+/* APLICACIÓN DE ANIMACIONES A LAS SECCIONES                 */
+/* ========================================================= */
+
+/* Títulos con brillo elegante */
+.columna-texto h2,
+.mision-vision h2 {
+    animation: luxuryGlow 4s infinite ease-in-out;
+}
+
+/* Texto de "Quienes Somos" aparece fuerte */
+.columna-texto {
+    animation: strongFadeUp 1.4s ease forwards;
+}
+
+/* Imágenes con zoom + parallax */
+.columna-imagenes img {
+    animation: zoomIn 1.3s ease forwards, parallaxFloat 6s ease-in-out infinite;
+}
+
+/* La sección completa entra fuerte al hacer scroll */
+.descripcion-marca {
+    opacity: 0;
+    animation: strongFadeUp 1.3s ease forwards;
+}
+
+/* Misión y visión con fade desde la derecha */
+.mision-vision {
+    opacity: 0;
+    animation: strongFadeRight 1.3s ease forwards;
+}
+/* Efecto 3D al mover el mouse */
+.img-3d {
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
+}
+
