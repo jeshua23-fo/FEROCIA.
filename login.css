@@ -1,51 +1,159 @@
-/* -------- LOGOS SUPERIORES -------- */
-.contenedor-logos {
-    margin-top: 40px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+    outline: none;
+    font-family: Poppins, sans-serif;
+    color: #fff;
+}
+
+/* --- Animación del fondo (respiración luminosa) --- */
+@keyframes bgMove {
+    0% { background-position: center; }
+    50% { background-position: center 20px; }
+    100% { background-position: center; }
+}
+
+body {
+    min-height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-}
-
-/* Tamaños proporcionados, similares al ejemplo que enviaste */
-.logo-instagram {
-    width: 160px;
-    height: auto;
-}
-
-.logo-tiktok {
-    width: 220px;
-    height: auto;
-}
-
-.logo-pinterest {
-    width: 260px;
-    height: auto;
-    filter: blur(1px);   /* Para que parezca un aro brillante */
-}
-
-
-/* -------- TEXTO + ÍCONOS (wspp / teléfono) -------- */
-.texto-contacto {
-    margin-top: 110px;
-    font-size: 45px;
-    font-weight: bold;
-}
-
-.fila {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 35px 0;
+    background-image: url("imagenfondo.png");
+    background-size: cover;
+    background-position: center;
+    animation: bgMove 8s ease-in-out infinite;
 }
 
-.fila .texto {
-    margin-right: 18px;
+/* --- Animación entrada del cuadro --- */
+@keyframes contentFade {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-/* Tamaño proporcional exacto a la tipografía */
-.icono {
-    width: 55px;
+.content {
+    width: 400px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(13px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    padding: 30px 35px;
+    animation: contentFade 0.8s ease forwards;
+}
+
+.content h2 {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+
+    /* Título con neon */
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+    animation: glowTitle 2s infinite alternate;
+}
+
+@keyframes glowTitle {
+    0% { text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
+    100% { text-shadow: 0 0 20px #fff, 0 0 35px #fff; }
+}
+
+.content .input-box {
+    position: relative;
+    width: 100%;
     height: 55px;
-    object-fit: contain;
+    margin: 30px 0;
+    animation: fadeUp 1s ease both;
 }
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.content .input-box input {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 0px 45px 20px 20px;
+    font-size: 16px;
+    transition: 0.4s ease;
+}
+
+/* Input neon al enfocar */
+.content .input-box input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 12px #fff;
+}
+
+input::placeholder {
+    color: #fff;
+    font-size: 16px;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+}
+
+.content .remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -16px 0 16px;
+    animation: fadeUp 1.3s ease both;
+}
+
+.remember label input {
+    accent-color: #fff;
+    margin-right: 4px;
+}
+
+.remember a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --- Botón pulsante --- */
+.btnn {
+    display: inline-block;
+    background: #fff;
+    color: black;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 16px;
+    height: 45px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 16px;
+
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px #fff; }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px #fff; }
+    100% { transform: scale(1); box-shadow: 0 0 10px #fff; }
+}
+
+.button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}  
